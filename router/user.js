@@ -7,5 +7,16 @@ const User = require("../models/User");
 
 //
 
+router.get("/updatePage", async (req, res) => {
+  //
+  try {
+    res.json({ message: "update page ..." });
+    //
+  } catch (err) {
+    console.log(err);
+    res.json(err);
+  }
+});
+
 //
 module.exports = router;

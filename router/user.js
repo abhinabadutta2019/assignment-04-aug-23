@@ -7,7 +7,7 @@ const User = require("../models/User");
 
 //
 
-router.get("/updatePage", async (req, res) => {
+router.get("/updatePage/:id", async (req, res) => {
   //
   try {
     res.json({ message: "update page ..." });

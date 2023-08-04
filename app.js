@@ -16,6 +16,13 @@ const port = 3007;
 // app.get("/", (req, res) => {
 //   res.send("Hello World12!");
 // });
+//
+// view engine
+const path = require("path");
+app.set("views", path.join(__dirname, "views"));
+
+//
+app.set("view engine", "ejs");
 
 //
 //mongoDB cloud

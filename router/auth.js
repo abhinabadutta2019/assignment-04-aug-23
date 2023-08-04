@@ -49,4 +49,30 @@ router.post("/signup", async (req, res) => {
 });
 
 //
+router.post("/login", async (req, res) => {
+  //
+  try {
+    const user = await User.findOne({ username: req.body.username });
+
+    //
+    if (!user) {
+      return res.json({ message: "user not found in ddatabase" });
+    }
+    //
+
+    //
+    if (req.body.password != user.password) {
+      //
+      return res.json({ message: "password not matched" });
+    }
+    //
+    res.json({ message: "password matched", user: user });
+    //
+  } catch (err) {
+    console.log(err);
+    res.json(err);
+  }
+});
+
+//
 module.exports = router;

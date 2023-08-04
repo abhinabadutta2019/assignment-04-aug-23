@@ -30,18 +30,26 @@ router.put("/updateAge", async (req, res) => {
     }
     //
     const user = await User.findOne({ username: req.body.username });
+
+    //
+
+    console.log(user, "user");
     //
     if (!user) {
       return res.json({ message: "user not found in database" });
     }
     //
 
-    const updatedAge = await User.findOne({ username: req.body.username });
+    const updatedAge = await User.findByIdAndUpdate(
+      { _id: user._id },
+      { age: ageValue },
+      { new: true }
+    );
 
     //
 
     /////////////////////////
-    res.json({ message: "update success" });
+    res.json({ message: "update success", user: updatedAge });
 
     //
   } catch (err) {

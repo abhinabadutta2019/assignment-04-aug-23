@@ -62,10 +62,13 @@ router.put("/updateAge", async (req, res) => {
 });
 
 //
-router.get("/userDetails", async (req, res) => {
+router.get("/userDetails/:id", async (req, res) => {
   //
   try {
-    res.render("userDetails");
+    const user = await User.findOne({ _id: req.params.id });
+    //
+    // res.render("userDetails");
+    res.json();
   } catch (err) {
     //
     console.log(err);

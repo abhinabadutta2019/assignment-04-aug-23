@@ -1,4 +1,7 @@
 <h3>update age here</h3>
+<!--  -->
+<%- include("partials/afterLoginHeader") %>
+<!--  -->
 <form action="#">
   <!--  -->
   <label for="username">Username</label>
@@ -20,8 +23,8 @@
     const data = { username: username, age: age };
     //
     //
-    const response = await fetch(`${window.location.origin}/auth/signup`, {
-      method: "POST",
+    const response = await fetch(`${window.location.origin}/user/updateAge`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -33,5 +36,11 @@
     const result = await response.json();
     //
     console.log(result, "result");
+    //
+    if (result.message == "update success") {
+      //   console.log(result.message, "result.message");
+      //
+      window.location.href = `${window.location.origin}/user/userDetails`;
+    }
   }
 </script>

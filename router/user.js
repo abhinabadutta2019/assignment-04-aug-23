@@ -62,4 +62,16 @@ router.put("/updateAge", async (req, res) => {
 });
 
 //
+router.get("/userDetails", async (req, res) => {
+  //
+  try {
+    res.render("userDetails");
+  } catch (err) {
+    //
+    console.log(err);
+    res.json(err);
+  }
+});
+
+//
 module.exports = router;

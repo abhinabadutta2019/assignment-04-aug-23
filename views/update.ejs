@@ -1,4 +1,4 @@
-<h3>update page</h3>
+<h3>update age here</h3>
 <form action="#">
   <!--  -->
   <label for="username">Username</label>
@@ -10,3 +10,28 @@
 <!--  -->
 <button id="loginButton" onclick="onUpdateButton()">Update</button>
 <!--  -->
+<script>
+  //
+  async function onUpdateButton() {
+    //
+    const username = document.getElementById("usernameId").value;
+    const age = document.getElementById("ageId").value;
+    //
+    const data = { username: username, age: age };
+    //
+    //
+    const response = await fetch(`${window.location.origin}/auth/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify(data),
+    });
+
+    //
+    const result = await response.json();
+    //
+    console.log(result, "result");
+  }
+</script>

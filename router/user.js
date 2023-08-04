@@ -67,8 +67,8 @@ router.get("/userDetails/:id", async (req, res) => {
   try {
     const user = await User.findOne({ _id: req.params.id });
     //
-    // res.render("userDetails");
-    res.json();
+    res.render("userDetails", { user: user });
+    // res.json();
   } catch (err) {
     //
     console.log(err);

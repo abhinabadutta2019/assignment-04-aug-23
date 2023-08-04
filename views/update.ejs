@@ -40,7 +40,12 @@
     if (result.message == "update success") {
       //   console.log(result.message, "result.message");
       //
-      window.location.href = `${window.location.origin}/user/userDetails`;
+
+      console.log(result.user._id, "result.user._id");
+      //
+      //
+      //for redirection
+      window.location.href = `${window.location.origin}/user/userDetails/${result.user._id}`;
     }
   }
 </script>

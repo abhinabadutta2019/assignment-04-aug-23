@@ -3,9 +3,11 @@ const express = require("express");
 const dotenv = require("dotenv");
 const router = express.Router();
 //
-const userRoutes = require("./router/auth");
+const authRoutes = require("./router/auth");
 //
 const app = express();
+app.use(express.json());
+//
 dotenv.config();
 const port = 3007;
 
@@ -23,8 +25,8 @@ mongoose.connect(uri, {
   useUnifiedTopology: true,
 });
 
-//
-app.use("/user", userRoutes);
+//auth routes page
+app.use("/auth", authRoutes);
 //
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

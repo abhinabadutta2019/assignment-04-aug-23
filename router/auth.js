@@ -4,12 +4,24 @@ const mongoose = require("mongoose");
 //
 const User = require("../models/User");
 
-// frontend/signup
+// frontend
+
+//signup
 
 router.get("/signup", async (req, res) => {
   //
   try {
     res.render("signup");
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+//
+router.get("/login", async (req, res) => {
+  //
+  try {
+    res.render("login");
   } catch (err) {
     console.log(err);
   }

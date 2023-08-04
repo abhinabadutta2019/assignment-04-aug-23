@@ -36,5 +36,10 @@
     const result = await response.json();
     //
     console.log(result, "result");
+    //
+    if (result.message == "password matched") {
+      // console.log(result.message, "result.message");
+      window.location.href = `${window.location.origin}/user/updatePage`;
+    }
   }
 </script>

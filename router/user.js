@@ -9,10 +9,11 @@ const User = require("../models/User");
 
 //
 
-router.get("/updatePage/:id", async (req, res) => {
+router.get("/updatePage", async (req, res) => {
   //
   try {
-    res.json({ message: "update page ..." });
+    // res.json({ message: "update page ..." });
+    res.render("update");
     //
   } catch (err) {
     console.log(err);
